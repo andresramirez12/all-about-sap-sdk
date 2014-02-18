@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{DA746FED-4C9A-40EB-9A21-1A9F19750574}</ProjectGuid>
+    <ProjectGuid>{C0638932-6563-4206-8F42-35F86C27B390}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HelloSap</RootNamespace>
-    <AssemblyName>HelloSap</AssemblyName>
+    <RootNamespace>DataNavigation</RootNamespace>
+    <AssemblyName>DataNavigation</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HelloSap.cs">
+    <Compile Include="Navigation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HelloSap.Designer.cs">
-      <DependentUpon>HelloSap.cs</DependentUpon>
+    <Compile Include="Navigation.Designer.cs">
+      <DependentUpon>Navigation.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="HelloSap.resx">
-      <DependentUpon>HelloSap.cs</DependentUpon>
+    <EmbeddedResource Include="Navigation.resx">
+      <DependentUpon>Navigation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -77,6 +77,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DAOSap\DAOSap.csproj">
+      <Project>{F457DB6A-9642-42AF-8C6F-54B4F73BFCAC}</Project>
+      <Name>DAOSap</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
     <COMReference Include="SAPbobsCOM">
       <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30090}</Guid>
       <VersionMajor>9</VersionMajor>
@@ -86,12 +92,6 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DAOSap\DAOSap.csproj">
-      <Project>{F457DB6A-9642-42AF-8C6F-54B4F73BFCAC}</Project>
-      <Name>DAOSap</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

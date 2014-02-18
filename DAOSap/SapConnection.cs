@@ -45,15 +45,15 @@ namespace DAOSap
             try
             {
                 Comany              = new Company();
-                Comany.Server       = "VM-DESENVSAP9";
-                Comany.CompanyDB    = "sbo_demobr_teste01";
-                Comany.UserName     = "manager";
+                Comany.Server = "NMS-PC";
+                Comany.CompanyDB = "SBODemoPT";
+                Comany.UserName = "manager";
                 Comany.UseTrusted   = false;
-                Comany.Password     = "nms@sap";
+                Comany.Password = "manager";
                 Comany.DbServerType = BoDataServerTypes.dst_MSSQL2008;
                 //Comany.language     = BoSuppLangs.ln_Portuguese_Br;
                 Comany.DbUserName   = "sa";
-                Comany.DbPassword   = "nms@sa";
+                Comany.DbPassword = "nmssa";
 
                 var conCode = Comany.Connect();
             }

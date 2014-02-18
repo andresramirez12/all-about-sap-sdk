@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloSap", "HelloSap\HelloS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAOSap", "DAOSap\DAOSap.csproj", "{F457DB6A-9642-42AF-8C6F-54B4F73BFCAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataNavigation", "DataNavigation\DataNavigation.csproj", "{C0638932-6563-4206-8F42-35F86C27B390}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,16 @@ Global
 		{F457DB6A-9642-42AF-8C6F-54B4F73BFCAC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{F457DB6A-9642-42AF-8C6F-54B4F73BFCAC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{F457DB6A-9642-42AF-8C6F-54B4F73BFCAC}.Release|x86.ActiveCfg = Release|Any CPU
+		{C0638932-6563-4206-8F42-35F86C27B390}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{C0638932-6563-4206-8F42-35F86C27B390}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{C0638932-6563-4206-8F42-35F86C27B390}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{C0638932-6563-4206-8F42-35F86C27B390}.Debug|x86.ActiveCfg = Debug|x86
+		{C0638932-6563-4206-8F42-35F86C27B390}.Debug|x86.Build.0 = Debug|x86
+		{C0638932-6563-4206-8F42-35F86C27B390}.Release|Any CPU.ActiveCfg = Release|x86
+		{C0638932-6563-4206-8F42-35F86C27B390}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{C0638932-6563-4206-8F42-35F86C27B390}.Release|Mixed Platforms.Build.0 = Release|x86
+		{C0638932-6563-4206-8F42-35F86C27B390}.Release|x86.ActiveCfg = Release|x86
+		{C0638932-6563-4206-8F42-35F86C27B390}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
