@@ -1,14 +1,14 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using DAOSap;
 using SAPbobsCOM;
-using System.IO;
 
 namespace HelloSap
 {
     public partial class HelloSap : Form
     {
-        private SapConnection _con = new SapConnection();
+        private SapConnectionOld _con = new SapConnectionOld();
         private string xml;
 
         public HelloSap()
@@ -158,7 +158,6 @@ namespace HelloSap
             var novo = new StreamReader(xml).ReadToEnd().Replace("C20000", "C29999").Replace("94.549.548/0001-39", "99.998.989/1111-99");
             _con.Comany.XMLAsString = true;
             BusinessPartners d = _con.Comany.GetBusinessObjectFromXML(novo, 0);
-
 
             d.Add();
             MessageBox.Show(_con.Message);

@@ -13,7 +13,7 @@ namespace DataNavigation
 {
     public partial class Navigation : Form
     {
-        private SapConnection _con;
+        private SapConnectionOld _con;
         private Items _oItens;
         private Recordset _recordSet;
 
@@ -24,7 +24,7 @@ namespace DataNavigation
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            _con = new SapConnection();
+            _con = new SapConnectionOld();
             _con.Connect();
             _oItens = _con.Comany.GetBusinessObject(BoObjectTypes.oItems);
             _recordSet = _con.Comany.GetBusinessObject(BoObjectTypes.BoRecordset);
@@ -33,34 +33,47 @@ namespace DataNavigation
 
             _oItens.Browser.MoveFirst();
 
-            SetFields(_oItens.ItemCode, _oItens.ItemName, _oItens.SalesUnit);
+            SetFields();
         }
 
-        private void SetFields(string code, string nome, string preco)
+        private void SetFields()
         {
-            txtCodigo.Text = code;
-            txtDescricao.Text = nome;
-            txtUnidade.Text = preco;
+            txtCodigo.Text = _oItens.ItemCode;
+            txtDescricao.Text = _oItens.ItemName;
+            txtUnidade.Text = _oItens.SalesUnit;
         }
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            _oItens.Browser.MoveNext();
 
-        }
+            if (_oItens.Browser.EoF)
+                _oItens.Browser.MoveFirst();
 
-        private void btnLat_Click(object sender, EventArgs e)
-        {
 
+            SetFields();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            if (_oItens.Browser.BoF)
+                _oItens.Browser.MoveLast();
+            else
+                _oItens.Browser.MovePrevious();
 
+            SetFields();
+        }
+
+        private void btnLat_Click(object sender, EventArgs e)
+        {
+            _oItens.Browser.MoveLast();
+            SetFields();
         }
 
         private void btnFirst_Click(object sender, EventArgs e)
         {
-
+            _oItens.Browser.MoveFirst();
+            SetFields();
         }
     }
 }

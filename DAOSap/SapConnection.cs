@@ -3,7 +3,48 @@ using SAPbobsCOM;
 
 namespace DAOSap
 {
-    public class SapConnection
+    public interface ISapInteraction
+    {
+        void Execute();
+        bool Success { get; }
+        string Message { get; }
+    }
+
+    public class SapConnection : ISapInteraction
+    {
+        private Company _company;
+        private ConnectionConf _config;
+
+        public SapConnection(ConnectionConf configuration)
+        {
+
+        }
+
+        public void Execute()
+        {
+            _company              = new Company();
+            _company.Server       = _config.Server;// "NMS-PC";
+            _company.CompanyDB    = _config.CompanyDB;// "SBODemoPT";
+            _company.UserName     = _config.UserName;// "manager";
+            _company.Password     = _config.Password;// "manager";
+            _company.DbServerType = BoDataServerTypes.dst_MSSQL2008;
+            _company.DbUserName   = _config.DbUserName;// "sa";
+            _company.DbPassword   = _config.DbPassword;// "nmssa";
+
+        }
+
+        public bool Success
+        {
+            get { throw new NotImplementedException(); }
+        }
+
+        public string Message
+        {
+            get { throw new NotImplementedException(); }
+        }
+    }
+
+    public class SapConnectionOld
     {
         private Exception _ex;
         private int _error;
